@@ -4,28 +4,28 @@
   <meta charset="utf-8">
   <title>Notion Dual Link</title>
   <style>
-    /* This centers the button on the page */
-    body {
+    /* Ensure the background fills the iframe without scrollbars */
+    html, body {
+      height: 100%;
       margin: 0;
+      overflow: hidden; /* This kills the scrollbars */
       display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
+      justify-content: center; /* Center horizontally */
+      align-items: center;     /* Center vertically */
       background-color: transparent; 
     }
 
-    /* This styles the button to look like Notion */
     button {
-      background-color: #2383E2; /* Notion Blue */
+      background-color: #2383E2; 
       color: white;
       border: none;
-      padding: 10px 16px;
-      border-radius: 6px;
+      /* Adjust padding below to make the button itself smaller/larger */
+      padding: 6px 12px; 
+      border-radius: 4px;
       cursor: pointer;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
       font-weight: 500;
-      font-size: 14px;
-      transition: background-color 0.1s;
+      font-size: 13px; /* Slightly smaller text */
     }
     button:hover {
       background-color: #1a6fb0;
@@ -34,14 +34,14 @@
 </head>
 <body>
 
-  <button onclick="openTabs()">Open Daily Links</button>
+  <button onclick="openTabs()">Open Lecture Tabs</button>
 
   <script>
     function openTabs() {
       // --- CHANGE THESE LINKS BELOW ---
       // You can add as many lines as you want.
       window.open('https://www.google.com');
-      window.open('https://www.notion.so');
+      window.open('https://www.apple.com');
     }
   </script>
 
