@@ -2,47 +2,42 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Notion Dual Link</title>
+  <title>Redirecting...</title>
   <style>
-    /* Ensure the background fills the iframe without scrollbars */
-    html, body {
-      height: 100%;
-      margin: 0;
-      overflow: hidden; /* This kills the scrollbars */
-      display: flex;
-      justify-content: center; /* Center horizontally */
-      align-items: center;     /* Center vertically */
-      background-color: transparent; 
-    }
-
-    button {
-      background-color: #2383E2; 
-      color: white;
-      border: none;
-      /* Adjust padding below to make the button itself smaller/larger */
-      padding: 6px 12px; 
-      border-radius: 4px;
-      cursor: pointer;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-      font-weight: 500;
-      font-size: 13px; /* Slightly smaller text */
-    }
-    button:hover {
-      background-color: #1a6fb0;
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      margin-top: 20%;
+      background-color: #f4f4f4;
     }
   </style>
 </head>
 <body>
 
-  <button onclick="openTabs()">Open Lecture Tabs</button>
+  <h3>Launching your tabs...</h3>
+  <p>If not all tabs opened, please check your pop-up blocker.</p>
 
   <script>
-    function openTabs() {
-      // --- CHANGE THESE LINKS BELOW ---
-      // You can add as many lines as you want.
-      window.open('https://www.google.com');
-      window.open('https://www.apple.com');
-    }
+    // --- EDIT YOUR LINKS HERE ---
+    // Make sure each link is inside quotes and ends with a comma
+    const links = [
+      'https://www.google.com',
+      'https://www.notion.so',
+      'https://www.weather.com' // You can add as many as you want
+    ];
+
+    window.onload = function() {
+      // This loop handles the logic automatically:
+      // 1. Opens all links (except the last one) in new background tabs.
+      // 2. Redirects THIS current tab to the very last link in the list.
+      
+      for (let i = 0; i < links.length - 1; i++) {
+        window.open(links[i]);
+      }
+
+      // Redirect the current tab to the last link
+      window.location.href = links[links.length - 1];
+    };
   </script>
 
 </body>
